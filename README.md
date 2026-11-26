@@ -27,3 +27,5 @@ Libraries: none for the MVP, only the Java standard library (Scanner, ArrayList,
 Data storage: a plain text file (courses.txt) in a simple comma-separated format
 Data sources: none, since all data is entered manually
 Version control: Git and GitHub
+
+![System Diagram](SystemDiagram.png)
