@@ -1,5 +1,6 @@
 public class GradeTracker {
     public static void main() {
+        // prints menu + welcome message
         IO.println("Hello, student");
         IO.println("Menu:");
         IO.println("1. Add course");
@@ -10,4 +11,3 @@ public class GradeTracker {
         String command = IO.readln("Select a number: ");
     }
 }
-
