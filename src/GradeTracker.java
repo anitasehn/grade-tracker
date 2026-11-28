@@ -22,6 +22,7 @@ public class GradeTracker {
                 Course course = new Course(courseName);
 
                 // Uses a while loop because total weight needs to be 100;
+                // Adds the categories to the course;
 
                 while ((Math.abs(100 - course.getTotal())) > 0.00001) {
                     String categoryName = IO.readln("Enter category name: ");
@@ -35,6 +36,20 @@ public class GradeTracker {
                     }
                 }
 
+                // Adds the grades cutoffs;
+                // Used a for loop with a predetermined number of letter grades; If cutoff is rejected, i--
+                // disconsiders the try;
+                int quant = Integer.parseInt(IO.readln("How many letter grades are there? "));
+                for (int i = 0; i < quant; i++) {
+                    String grade = IO.readln("Enter a letter grade: ");
+                    double gradeCutoff = Double.parseDouble(IO.readln("Enter the letter grade cutoff: "));
+                    if (course.addCutoff(grade, gradeCutoff)) {
+                        IO.println("The grade has been added.");
+                    } else {
+                        IO.println("The cutoff is not valid.");
+                        i--;
+                    }
+                }
                 courses.add(course);
                 IO.println("The course has been added");
 

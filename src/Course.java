@@ -21,11 +21,15 @@ public class Course {
         return name;
     }
 
-    public void addCutoff(String letterGrade, double cutoff) {
+    // No upper limit to account for extra credit
+
+    public boolean addCutoff(String letterGrade, double cutoff) {
         if (cutoff >= 0.0) {
             this.cutoffs.add(cutoff);
             this.letterGrades.add(letterGrade);
-
+            return true;
+        } else {
+            return false;
         }
     }
 
