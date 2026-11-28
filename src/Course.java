@@ -55,4 +55,14 @@ public class Course {
             return false;
         }
     }
+
+    // Makes a boolean to add assignment so user knows if the assignment was successfully created
+    public boolean addAssignment(Assignment assignment) {
+        if (categories.contains(assignment.getCategory())) {
+            this.assignments.add(assignment);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

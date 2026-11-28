@@ -9,8 +9,12 @@ public class Assignment {
     public Assignment(String name, String category, double score, double worth) {
         this.name = name;
         this.category = category;
-        this.score = score;
-        this.worth = worth;
+        if (worth <= 0 || score < 0) {
+            throw new IllegalArgumentException("Invalid worth or score");
+        } else {
+            this.score = score;
+            this.worth = worth;
+        }
     }
 
 
@@ -28,6 +32,10 @@ public class Assignment {
 
     public String getCategory() {
         return category;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
     }
 
 }
