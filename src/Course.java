@@ -27,6 +27,28 @@ public class Course {
             this.letterGrades.add(letterGrade);
 
         }
+    }
 
+    // Makes a method that returns the total so that the user can break out of the loop in main
+
+    public double getTotal() {
+        double total = 0.0;
+        for (double w : categoryWeights) {
+            total += w;
+        }
+        return total;
+    }
+
+
+    // Makes a boolean so user knows when cannot add a weight
+
+    public boolean addCategory(String category, double weight) {
+        if (weight > 0.0 && weight + getTotal() <= 100.0) {
+            this.categoryWeights.add(weight);
+            this.categories.add(category);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
